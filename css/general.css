@@ -1,0 +1,707 @@
+/*This file contains general theme styles*/
+
+*{
+	padding:0; 
+	margin:0;
+	outline:0;
+	}
+
+
+/*==Default styles for HTML 4==*/
+
+html, address,
+blockquote,
+body, dd, div,
+dl, dt, fieldset, form,
+frame, frameset,
+h1, h2, h3, h4,
+h5, h6, noframes,
+ol, p, ul, center,
+dir, hr, menu, pre   { display: block; unicode-bidi: embed }
+fieldset		{border:none;}
+li              { display: list-item }
+head            { display: none }
+table           { display: table }
+tr              { display: table-row }
+thead           { display: table-header-group }
+tbody           { display: table-row-group }
+tfoot           { display: table-footer-group }
+col             { display: table-column }
+colgroup        { display: table-column-group }
+td, th          { display: table-cell }
+caption         { display: table-caption }
+th              { font-weight: bolder; text-align: center }
+caption         { text-align: center }
+h1              { font-size: 2em; margin: .67em 0 }
+h2              { font-size: 1.5em; margin: .75em 0 }
+h3              { font-size: 1.17em; margin: .83em 0 }
+h4, 
+blockquote, ul,
+fieldset, form,
+ol, dl, dir,
+menu            { margin: 1.12em 0 }
+p				{ margin:0; }
+h5              { font-size: .83em; margin: 1.5em 0 }
+h6              { font-size: .75em; margin: 1.67em 0 }
+h1, h2, h3, h4,
+h5, h6, b,
+strong          { font-weight: bolder }
+blockquote      { margin-left: 40px; margin-right: 40px }
+i, cite, em,
+var, address    { font-style: italic }
+pre, tt, code,
+kbd, samp       { font-family: monospace }
+pre             { white-space: pre }
+button, textarea,
+input, select   { display: inline-block }
+big             { font-size: 1.17em }
+small, sub, sup { font-size: .83em }
+sub             { vertical-align: sub }
+sup             { vertical-align: super }
+table           { border-spacing: 2px; }
+thead, tbody,
+tfoot           { vertical-align: middle }
+td, th, tr      { vertical-align: inherit }
+s, strike, del  { text-decoration: line-through }
+hr              { border: 1px inset }
+ol, ul, dir,
+menu, dd        { margin-left: 40px }
+ol              { list-style-type: decimal }
+ol ul, ul ol,
+ul ul, ol ol    { margin-top: 0; margin-bottom: 0 }
+u, ins          { text-decoration: underline }
+br:before       { content: "\A"; white-space: pre-line }
+center          { text-align: center }
+:link, :visited { text-decoration: none }
+:focus          { outline: 0 }
+li				{ list-style:none }
+
+a, a img, input, button{outline:0; 
+	border:none;
+	}
+
+/* Begin bidirectionality settings (do not change) */
+BDO[DIR="ltr"]  { direction: ltr; unicode-bidi: bidi-override }
+BDO[DIR="rtl"]  { direction: rtl; unicode-bidi: bidi-override }
+
+*[DIR="ltr"]    { direction: ltr; unicode-bidi: embed }
+*[DIR="rtl"]    { direction: rtl; unicode-bidi: embed }
+
+@media print {
+  h1            { page-break-before: always }
+  h1, h2, h3,
+  h4, h5, h6    { page-break-after: avoid }
+  ul, ol, dl    { page-break-before: avoid }
+}
+
+
+/*=====FORMS=====*/
+
+/* Form validation */
+.invalid { border-color: #ff0000; }
+label.invalid { color: #ff0000; }
+
+
+
+/*=====Lists======*/
+
+ul.menu{
+	margin:0;
+	padding:0;
+	}
+	
+ul.menu li{
+	list-style:none;}
+
+
+/*===Breadcrumb===*/
+
+#breadcrumbs a{
+	text-decoration:none;}
+
+
+
+/* Tooltips */
+.tip {
+   float: left;
+   background: #ffc;
+   border: 1px solid #D4D5AA;
+   padding: 5px;
+   max-width: 200px;
+   position:relative;
+   z-index:999;
+}
+
+.tip-title {
+   padding: 0;
+   margin: 0;
+   font-size: 100%;
+   font-weight: bold;
+
+   margin-top: -15px;
+   padding-top: 15px;
+   padding-bottom: 5px;
+   position:relative;
+   z-index:999;
+
+}
+
+.tip-text {
+   font-size: 100%;
+   margin: 0;
+      position:relative;
+   z-index:999;
+
+}
+
+/* Caption fixes */
+.img_caption .left {
+        float: left;
+        margin-right: 1em;
+}
+
+.img_caption .right {
+        float: right;
+        margin-left: 1em;
+}
+
+.img_caption .left p {
+        clear: left;
+        text-align: center;
+}
+
+.img_caption .right p {
+        clear: right;
+        text-align: center;
+}
+
+.img_caption  {
+	text-align: center!important;
+}
+
+.img_caption.none {
+	margin-left:auto;
+	margin-right:auto;
+}
+
+
+/* Calendar */
+a img.calendar {
+	width: 16px;
+	height: 16px;
+	margin-left: 3px;
+	background: url(../images/calendar.png) no-repeat;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+
+/*==========MAIN LAYOUT==========*/
+
+#left-col{
+	float:left;
+	width:<?php $leftcol_width ?>px;
+	}
+	
+#right-col{
+	float:left;
+	width:<?php $rightcol_width ?>px;
+	}
+	
+#content{
+	float:left;
+	}
+	
+
+
+/*============MODULES==============*/
+
+/*===Articles Category / Articles Categories / Archived Articles===*/
+
+ul.category-module,
+ul.categories-module,
+archive-module ul{
+	margin-left:1em;}
+	
+ul.category-module li,
+ul.categories-module li,
+ul.archive-module li{
+	list-style:none;}
+
+/*===Login===*/
+
+form#login-form ul{
+	margin-left:0;}
+
+form#login-form ul li{
+	list-style:none;
+	}
+	
+
+
+
+
+/*==================COMPONENT PAGES=======================*/
+
+
+
+	/*===Login page===*/
+
+div.login ul{
+	margin-left:0;
+	}
+
+	div.login ul li{
+	list-style:none;
+	}
+	
+div.login-fields{
+	    margin: 0.5em 0;}
+	
+div.login-fields label{
+	display: inline-block;
+    width: 10em;
+	}
+	
+div.login-fields input{
+	width:15em;}
+	
+	/*===Logout page===*/
+	
+	/*===Reset password page===*/
+	
+div.reset form#user-registration dt{
+	display:block;
+	float:left;
+	width:10em;}
+	
+div.reset form#user-registration dd{
+		display:block;
+	float:left;
+}
+
+	/*===Reset username page===*/
+	
+div.remind form#user-registration dt{
+		display:block;
+	float:left;
+
+	width:10em;}
+	
+div.remind form#user-registration dd{
+		display:block;
+	float:left;
+}
+	
+	/*===Registration page====*/
+	
+div.registration form#member-registration fieldset{
+	border:1px solid #CCC;
+	padding:1em;}
+	
+div.registration form#member-registration fieldset legend{
+	padding:0 0.5em;}
+	
+div.registration form#member-registration dt{
+	display:block;
+	float:left;
+
+	width:12em;}
+	
+div.registration form#member-registration dd{
+		display:block;
+	}
+	
+	/*===Profile page====*/
+	
+div.profile fieldset#users-profile-core, 
+div.profile fieldset#users-profile-custom,
+div.profile-edit form#member-profile fieldset{
+	border:1px solid #CCC;
+	padding:1em;
+	}
+	
+div.profile fieldset legend, div.profile-edit fieldset legend{
+	padding:0 0.5em;}
+	
+div.profile fieldset dl, div.profile-edit fieldset dl{
+	overflow:hidden;}
+	
+div.profile fieldset dt, div.profile-edit fieldset dt{
+		display:block;
+
+	width:10em;
+	float:left;}
+	
+	
+	
+
+	
+	/*==Article Details===*/
+
+dl.article-info dd{
+	margin-left:1em;
+	}
+	
+	/*===Action Icons===*/
+
+ul.actions{
+	float:right;
+	margin-left:0;
+	padding-right:1em;
+	}
+
+ul.actions li{
+	list-style:none;}
+
+	
+	/*===Blog/Featured Layout===*/
+
+.items-row .item{
+	float:left;}
+	
+.items-row.cols-1 .item{
+	width:100%;
+}
+
+.items-row.cols-2 .item{
+	width:50%;
+}
+
+.items-row.cols-3 .item{
+	width:33%;
+}
+
+.items-row.cols-4 .item{
+	width:25%;
+}
+
+.item-content, .item .system-unpublished{
+	}
+	
+	
+span.row-separator{
+	clear:both;
+	visibility:none;
+	height:0px;
+	line-height:0px;
+	display:block;}
+	
+	
+	/*===Page navigation===*/
+
+ul.pagenav{
+	overflow:hidden;
+	margin-left:0;}
+
+ul.pagenav li{
+	list-style:none;}
+	
+ul.pagenav li.pagenav-prev{
+	float:left;}
+ul.pagenav li.pagenav-next{
+	float:right;
+}
+
+div.pagination{
+	overflow:hidden;}
+	
+p.counter{
+	text-align:center;}
+	
+div.pagination ul{
+	overflow:hidden;
+	}
+	
+div.pagination ul li{
+	float:left;
+	padding:0 0.5em;
+	list-style:none;
+	}
+	
+	
+	/*===Category List===*/
+	
+div.category-list a, table.category a{
+	text-decoration:none;}
+	
+div.display-limit{
+	margin-bottom:1em;}
+	
+	
+table.category td, table.category th{
+	border:1px solid #ccc;
+	padding:0.5em;
+	}
+table.category td.list-hits{
+	text-align:center;
+	}
+
+	/*===Categories List===*/
+	
+div.categories-list a{
+	text-decoration:none;}
+	
+div.categories-list ul{
+	margin-left:0;
+	}
+	
+div.categories-list ul ul{
+	margin-left:2em;}
+	
+div.categories-list ul ul ul{
+	margin-left:4em;}
+	
+div.categories-list ul li{
+	list-style:none;}
+	
+div.categories-list ul li dl{
+	margin-left:2em;}
+	
+div.categories-list ul li dl dt{
+	display:inline-block;
+	width:7em;}
+	
+div.categories-list ul li dl dd{
+	display:inline-block;
+	margin-left:0;
+	font-weight:bold;}
+	
+div.categories-list div.category-desc{
+	margin-left:2em;}
+	
+	/*===Archived Articles===*/
+
+div.archive fieldset{
+	border:1px solid #CCC;
+	padding:1em;
+}
+
+div.archive fieldset legend{
+	padding:0 0.5em;
+	}
+	
+
+	/*===Submit===*/
+	
+div.edit form#adminForm fieldset{
+	border:1px solid #CCC;
+	padding:1em;
+	}
+
+div.edit form#adminForm fieldset legend{
+	padding:0 0.5em;
+	}
+	
+div.edit form#adminForm fieldset label{
+	width:10em;
+	display:inline-block;
+	}
+	
+div.edit form#adminForm fieldset div.formelm input{
+	width:15em;}
+	
+div.edit form#adminForm fieldset div.formelm select{
+	width:10em;}
+	
+div.edit form#adminForm fieldset div.formelm img{
+	display:inline-block;
+	margin:0 0.5em;}
+	
+div.edit form#adminForm fieldset div.formelm{
+	margin:0.5em 0;
+	}
+	
+div#editor-xtd-buttons, div.toggle-editor{
+	margin:1em ;}
+	
+div#editor-xtd-buttons div.button2-left, div.toggle-editor div.button2-left{
+	background:url(../images/system/j_button2_left.png) no-repeat scroll 0 0 transparent;
+    float: left;
+    margin-right: 10px;
+	}
+	
+div#editor-xtd-buttons div.button2-left a, div.toggle-editor div.button2-left a{
+    color: #333333;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-size: 1em;
+    height: 22px;
+    line-height: 22px;
+	padding: 0 24px 0 6px;
+	text-decoration:none;
+	}
+	
+.button2-left .image {
+    background: url(../images/system/j_button2_image.png) no-repeat scroll 100% 0 transparent;
+	float:left;
+}
+
+.button2-left .article {
+    background: url(../images/system/j_button2_readmore.png) no-repeat scroll 100% 0 transparent;
+	float:left;
+}
+
+.button2-left .pagebreak {
+    background: url(../images/system/j_button2_pagebreak.png) no-repeat scroll 100% 0 transparent;
+	float:left;
+}
+
+.button2-left .readmore {
+    background: url(../images/system/j_button2_readmore.png) no-repeat scroll 100% 0 transparent;
+	float:left;
+}
+
+.button2-left .blank {
+    background: url(../images/system/j_button2_blank.png) no-repeat scroll 100% 0 transparent;
+	float:left;
+}
+
+
+	/*===Single contact===*/
+
+div.contact a{
+	text-decoration:none;}
+
+div#contact-slider .jicons-icons{
+	display:inline-block;
+	width:25px;
+	height:16px;
+	float: left;}
+	
+div#contact-slider .jicons-icons img{
+	margin:0;}
+	
+div#contact-slider address{
+	display:inline-block;
+	padding-left:1em;}
+	
+div#contact-slider address span{
+	display:block;}
+	
+div.contact-form dt{
+	margin:0.5em 0;}
+	
+div.contact-form  label{
+	display:block;
+	width:11em;
+	float:left;}
+	
+div.contact-form input.inputbox{
+	display:inline;
+	width:18em;}
+	
+div.contact-form input.checkbox{
+	margin-right:1em;}
+	
+div.contact-form label#contact-textmsg{
+	vertical-align:top;}
+	
+	
+	
+
+/* System Messages */
+
+.error{
+	padding:0px;
+    margin-bottom: 1em;
+	}
+
+.error h2{
+    color:#000 !important;
+	font-size:1.4em !important;
+	text-transform:uppercase;
+	padding:0 0 0 0px !important
+}
+
+#system-message{
+	margin:1em 0;
+	border-left:0;
+	border-right:0;
+}
+
+#system-message dt{ 
+	font-weight: bold; 
+}
+#system-message dd{ 
+	margin: 0 0 1em 0;
+	font-weight: bold;
+	text-indent: 0px;
+	padding:0
+}
+#system-message dd ul{ 
+	color: #000; 
+	list-style: none; 
+	padding: 0px;
+}
+#system-message dd ul li{
+	line-height:1.5em 
+}
+
+/* System Standard Messages */
+#system-message dt.message { 
+	position:absolute;
+	top:-2000px;
+	left:-3000px;
+}
+	
+#system-message dd.message  ul{
+	background: #fff  url(../images/system/notice-info.png) no-repeat;
+	padding-left:2em;
+	padding: 1em 1em 1em 2em;
+	border-top: 2px solid #90B203;
+	border-bottom: 2px solid #90B203;
+}
+
+#system-message dd.message ul li{background:none !important}
+
+/* System Error Messages */
+#system-message dt.error { 
+	position:absolute;
+	top:-2000px;
+	left:-3000px;
+}
+	
+#system-message dd.error ul
+{
+	background:#fff url(../images/system/notice-alert.png) no-repeat ;
+	padding-left:2em;
+	padding: 1em 1em 1em 2em;
+    border-top: 2px solid #990000;
+    border-bottom: 2px solid #990000;
+}
+
+
+
+/* System Notice Messages */
+#system-message dt.notice { 
+	position:absolute;
+	top:-2000px;
+	left:-3000px;
+}
+	
+#system-message dd.notice  ul
+{ 
+		background:#fff url(../images/system/notice-note.png) no-repeat ;
+	padding-left:2em;
+	padding: 1em 1em 1em 2em;
+	    border-top: 2px solid #FAA528;
+	    border-bottom: 2px solid #FAA528; 
+}
+#system-message dd.notice ul { color: #000;margin:10px 0 }
+
+#system-message {
+    margin-bottom: 0px;
+    padding: 0;
+}
+
+#system-message dt {
+    font-weight: bold;
+}
+
+#system-message dd {
+    font-weight: bold;
+    padding: 0;
+}
+
